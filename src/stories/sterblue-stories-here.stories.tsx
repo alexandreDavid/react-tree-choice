@@ -12,8 +12,24 @@ export default { title: "Exercise Component" };
 
 // export const Basic = () => <MyComponent />;
 
+const reportConfig = {
+  "enabled": true,
+  "children": {
+    "coverPage": { "enabled": true },
+    "summary": { "enabled": true },
+    "anomalyDefinitions": { "enabled": true },
+    "missionReport": {
+      "enabled": true,
+      "children": {
+        "missionDescription": { "enabled": true },
+        "missionCustomerInfo": { "enabled": true }
+      }
+    }
+  }
+ } 
+
 export const Basic = () => (
   <ThemeProvider theme={theme}>
-    <MyComponent />
+    <MyComponent reportConfig={reportConfig} />
   </ThemeProvider>
 );
